@@ -6,6 +6,17 @@ sudo apt-get update && sudo apt-get upgrade -y > /dev/null
 echo "### INSTALL NGINX ###"
 
 sudo apt-get install nginx -y > /dev/null
+sudo rm -f /etc/nginx/sites-available/default && sudo rm -f /etc/nginx/sites-enabled/default > /dev/null
+
+echo "### CREATE SSL DIRECTORIES ###"
+sudo mkdir /etc/nginx/ssl && sudo mkdir /etc/nginx/ssl/sharebird > /dev/null
+
+echo "### Copy ssl sertificates ###"
+sudo cp -r /tmp/ssl/. /etc/nginx/ssl/sharebird/ > /dev/null
+
+echo "### Copy sharebird NGINX config file ###"
+sudo cp /tmp/nginx/sharebird /etc/nginx/sites-available > /dev/null
+sudo ln -n /etc/nginx/sites-available/sharebird /etc/nginx/sites-enabled > /dev/null
 
 echo '### Install postgresql 9.5 ###'
 sudo apt-get install libpq-dev -y > /dev/null
@@ -53,5 +64,11 @@ rbenv global 2.3.1 > /dev/null
 
 echo '### Install bundler gem ###'
 gem install bundler > /dev/null
+
+echo "### Install NodeJs ###"
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs > /dev/null
+echo "### Install NodeJs essential ###"
+sudo apt-get install -y build-essential > /dev/null
 
 echo '### Done !!! ###'

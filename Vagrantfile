@@ -13,5 +13,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder "./sharebird", "/vagrant_data/sharebird"
 
+  config.vm.provision "file", source: "./ssl", destination: "/tmp"
+  config.vm.provision "file", source: "./nginx", destination: "/tmp"
   config.vm.provision :shell, path: "bootstrap.sh", privileged: false
 end
