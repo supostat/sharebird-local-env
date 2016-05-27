@@ -18,6 +18,8 @@ echo "### Copy sharebird NGINX config file ###"
 sudo cp /tmp/nginx/sharebird /etc/nginx/sites-available > /dev/null
 sudo ln -n /etc/nginx/sites-available/sharebird /etc/nginx/sites-enabled > /dev/null
 
+sudo service nginx restart > /dev/null
+
 echo '### Install postgresql 9.5 ###'
 sudo apt-get install libpq-dev -y > /dev/null
 
