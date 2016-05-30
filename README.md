@@ -26,8 +26,7 @@ sudo sh -c 'echo "server=/sharebird.dev/127.0.0.1#10053" > /etc/dnsmasq.d/vagran
 sudo service dnsmasq restart
 ~~~
 
-- Place ssl certificates into ssl folder
-Склонируйте репозиторий с проектом, желательно в папку с vagrant, так-как этот путь прописан по умолччанию в Vagrantfile<br><br>
+- Склонируйте репозиторий с проектом, желательно в папку с vagrant, так-как этот путь прописан по умолччанию в Vagrantfile<br><br>
 Up Vagrant box
 ~~~bash
 vagrant up
