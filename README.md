@@ -29,8 +29,8 @@ sudo service dnsmasq restart
 - Place ssl certificates into ssl folder
 Склонируйте репозиторий с проектом, желательно в папку с vagrant, так-как этот путь прописан по умолччанию в Vagrantfile<br><br>
 Up Vagrant box
-~~~
-$ vagrant up
+~~~bash
+vagrant up
 ~~~
 
 >В процессе первого старта Vagrant установит все необходимые пакеты (Nginx, Postgress, NodeJs, rbenv, ruby etc.) и скопирует файлы конфигурации и ssl сертификаты, так-же в процессе установки могут вылетать некоторые ошибки, все нормально, не обращайте внимания, я еще работаю на этим.
