@@ -5,6 +5,7 @@ Install
 =======
 
 - Install **[Vagrant](https://www.vagrantup.com/)**
+- Install **[VirtualBox](https://www.virtualbox.org/)**
 
 > ### If you are using Ubuntu 16.04
 In Ubuntu 16.04, there is an error when you installing landrush plugin. To fix it you should apply patch for vagrant.
@@ -26,19 +27,22 @@ sudo sh -c 'echo "server=/sharebird.dev/127.0.0.1#10053" > /etc/dnsmasq.d/vagran
 sudo service dnsmasq restart
 ~~~
 
-- Склонируйте репозиторий с проектом, желательно в папку с vagrant, так-как этот путь прописан по умолччанию в Vagrantfile<br><br>
+- Clone the repository with project, better to do it into vagrant folder, because this is the default path in Vagrantfile<br><br>
+
 Up Vagrant box
 ~~~bash
 vagrant up
 ~~~
 
->В процессе первого старта Vagrant установит все необходимые пакеты (Nginx, Postgress, NodeJs, rbenv, ruby etc.) и скопирует файлы конфигурации и ssl сертификаты, так-же в процессе установки могут вылетать некоторые ошибки, все нормально, не обращайте внимания, я еще работаю на этим.
+>During the first "Vagrant up” -  Vagrant will install all the necessary packages (Nginx, Postgress, NodeJs, rbenv, ruby etc.), cope the configuration files and ssl-certificates. Also there might me some errors during this process - don’t take them into account (I’m working on them).
 
-- После того, как установка закончится войдите в бокс
+- When the installation is finished, run the box
+
 ~~~bash
 vagrant ssh
 ~~~
-- Перейдите в папку с проектом
+- Move to the folder with project
+
 ~~~bash
 cd /vagrant_data/sharebird
 ~~~
